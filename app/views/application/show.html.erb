@@ -1,8 +1,16 @@
-<h1>Hello</h1>
+<h1>Welly Chess</h1>
 
+<ul>
 <% @players.each do |player| %>
+  <li>
   <%= player.username %>
   <%= player.rating %>
+  </li>
 <% end %>
+</ul>
 
 <!-- Form for new player -->
+<%= form_for(@player) do |f| %>
+  <%= f.text_field :username %>
+  <%= f.submit %>
+<% end %>

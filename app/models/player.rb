@@ -1,6 +1,8 @@
 class Player < ActiveRecord::Base
   after_create :set_rating_or_destroy
 
+  default_scope -> { order(:rating) }
+
   private
 
   def set_rating_or_destroy
